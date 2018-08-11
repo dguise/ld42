@@ -22,7 +22,7 @@ public class SpacebarController : MonoBehaviour {
             // rb.AddRelativeForce(new Vector2(0.5f, 0), ForceMode2D.Impulse);
         } else if(Input.GetKeyUp(KeyCode.Space)) {
             float timeDiff = Time.time - spaceStartTime;
-            rb.AddForce(transform.right * timeDiff * timeScale);
+            rb.AddForce(-transform.up * timeDiff * timeScale);
             Debug.Log("TIME DIFF: " + timeDiff);
         }
 
