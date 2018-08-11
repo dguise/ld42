@@ -7,10 +7,10 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     GameObject player;
-    [Range(0.1f, 1f)]
+    [Range(0.1f, 50f)]
     public float gravitation = 0.45f;
     [Range(4, 20)]
-    public float gravitationRadius = 11;
+    public float gravitationRadius = 11f;
     [Range(-2, 2f)]
     public float rotationSpeed = 0.9f;
 
@@ -30,7 +30,9 @@ public class Planet : MonoBehaviour
         foreach (var objectInVicinity in objectsInRange)
         {
             float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
-            Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * (gravitationRadius - dist);
+            float gravitationFactor = 1 - dist / gravitationRadius;
+            Debug.Log("GRAVFACTOR: " + gravitationFactor);
+            Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * gravitationFactor;
             objectInVicinity.AddForce(force);
         }
     }
