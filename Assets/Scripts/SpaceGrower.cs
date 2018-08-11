@@ -12,7 +12,7 @@ public class SpaceGrower : MonoBehaviour
     void Start()
     {
         baseScale = transform.localScale;
-        
+
     }
 
 

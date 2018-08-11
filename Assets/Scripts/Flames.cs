@@ -14,7 +14,6 @@ public class Flames : MonoBehaviour
 
     void FixedUpdate()
     {
-
         var random = Random.Range(0.0f, 10.0f);
         if (random > 3)
         {

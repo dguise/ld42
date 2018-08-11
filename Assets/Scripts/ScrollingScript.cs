@@ -39,10 +39,10 @@ public class ScrollingScript : MonoBehaviour
 
     void Update()
     {
-            Vector3 movement = new Vector3(
-          -rbPlayer.velocity.x,
-          speed.y * direction.y,
-          0);
+        Vector3 movement = new Vector3(
+      -rbPlayer.velocity.x,
+      speed.y * direction.y,
+      0);
 
         //Vector3 movement = new Vector3(
         //  speed.x * direction.x,
