@@ -31,7 +31,6 @@ public class Planet : MonoBehaviour
         {
             float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
             float gravitationFactor = 1 - dist / gravitationRadius;
-            Debug.Log("GRAVFACTOR: " + gravitationFactor);
             Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * gravitationFactor;
             objectInVicinity.AddForce(force);
         }
