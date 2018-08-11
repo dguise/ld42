@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4614834245891326}
   - component: {fileID: 212726508812175650}
   - component: {fileID: 114081851405704084}
+  - component: {fileID: 114065978605866336}
   m_Layer: 0
   m_Name: sol
   m_TagString: Untagged
@@ -65,13 +66,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285930441506648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.92, y: 0.31521, z: 9.81147}
+  m_LocalPosition: {x: -42.84, y: 0.31521, z: -0.18852997}
   m_LocalScale: {x: 3.0948, y: 3.0948, z: 6.1896}
   m_Children:
   - {fileID: 4599331624862430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114065978605866336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285930441506648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a458d5dfdbd6644da474a2e13a3fdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  player: {fileID: 0}
+  rubberBandRadius: 50
 --- !u!114 &114081851405704084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22172189f8543e2408efac48aa7a04a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationX: 0
+  rotationY: 0
+  rotationZ: 0.05
 --- !u!114 &114690864090857700
 MonoBehaviour:
   m_ObjectHideFlags: 1
