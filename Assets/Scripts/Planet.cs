@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(CircleCollider2D), typeof(CircleCollider2D))]
 public class Planet : MonoBehaviour
 {
     GameObject player;
@@ -11,38 +11,48 @@ public class Planet : MonoBehaviour
     public float gravitation = 0.45f;
     [Range(4, 20)]
     public float gravitationRadius = 11;
+    [Range(-2, 2f)]
+    public float rotationSpeed = 0.9f;
 
-    private Rigidbody2D rbPlayer;
+    private CircleCollider2D gravitationTrigger;
 
     void Start()
     {
-        player = GameManager.Player;
-        rbPlayer = player.GetComponent<Rigidbody2D>();
+        gravitationTrigger = GetComponents<CircleCollider2D>()[1];
+        gravitationTrigger.isTrigger = true;
+        gravitationTrigger.radius = gravitationRadius;
     }
 
     void FixedUpdate()
     {
-        /* Alternative way of doin it: 
-         * Or: OnTriggerENter, save object in list, every update iterate the list and addforce. Ontriggerleave remove from list
-         * var hits = Physics2D.OverlapCircleAll(transform.position, gravitationRadius);
-        foreach (var hit in hits)
-        {
-            float dist = Vector2.Distance(transform.position, hit.transform.position);
-            Vector2 force = (transform.position - hit.transform.position).normalized * gravitation * (gravitationRadius - dist);
-            rbPlayer.AddForce(force);
-        }*/
+        transform.Rotate(Vector3.forward * rotationSpeed);
 
-        float dist = Vector2.Distance(transform.position, player.transform.position);
-        if (dist < gravitationRadius)
+        foreach (var objectInVicinity in objectsInRange)
         {
-            Vector2 force = (transform.position - player.transform.position).normalized * gravitation * (gravitationRadius - dist);
-            rbPlayer.AddForce(force);
+            float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
+            Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * (gravitationRadius - dist);
+            objectInVicinity.AddForce(force);
         }
     }
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Random.ColorHSV();
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, gravitationRadius);
+    }
+
+    private List<Rigidbody2D> objectsInRange = new List<Rigidbody2D>();
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        var rb = collider.GetComponent<Rigidbody2D>();
+        if (rb != null)
+            objectsInRange.Add(rb);
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        var rb = collider.GetComponent<Rigidbody2D>();
+        if (rb != null)
+            objectsInRange.Remove(rb);
     }
 }
