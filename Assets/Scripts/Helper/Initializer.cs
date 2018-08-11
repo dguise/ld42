@@ -18,5 +18,6 @@ namespace Assets.Scripts.Helper
     public static class GameManager
     {
         public static GameObject Player { get; set; }
+        public static float Score { get; set; }
     }
 }
