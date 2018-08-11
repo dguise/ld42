@@ -18,12 +18,9 @@ public class SpacebarController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             spaceStartTime = Time.time;
-            Debug.Log("SPACE TIME: " + spaceStartTime);
-            // rb.AddRelativeForce(new Vector2(0.5f, 0), ForceMode2D.Impulse);
         } else if(Input.GetKeyUp(KeyCode.Space)) {
             float timeDiff = Time.time - spaceStartTime;
             rb.AddForce(-transform.up * timeDiff * timeScale);
-            Debug.Log("TIME DIFF: " + timeDiff);
         }
 
         if (Input.GetKey(KeyCode.A)) {
