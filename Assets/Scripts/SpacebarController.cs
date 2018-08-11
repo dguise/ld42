@@ -56,7 +56,6 @@ public class SpacebarController : MonoBehaviour
             DisableStuff();
             chargeTrailTimestamp = Time.time;
             dischargeTime = dischargeMaxTime * chargeFactor;
-            Debug.Log("DISCHARGE TIME = " + dischargeTime);
         }
         else if (Input.GetKey(KeyCode.Space))
         {
