@@ -6,18 +6,7 @@ using UnityEngine.UI;
 
 public class Fader : MonoBehaviour
 {
-    private static Fader _instance = null;
-    public static Fader Instance {
-        get {
-            if (_instance == null)
-                _instance = Instantiate(Resources.Load<GameObject>("FaderCanvas")).GetComponentInChildren<Fader>();
-            return _instance;
-        }
-        set
-        {
-            _instance = value;
-        }
-    }
+    public static Fader Instance;
 
     Image fadeImage;
 
@@ -30,47 +19,56 @@ public class Fader : MonoBehaviour
 
     void Start()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
         fadeImage = GetComponent<Image>();
-        fadeImage.color = invisible;
     }
 
     public void FadeOut(Action doneCallback = null)
     {
-        fadeImage = GetComponent<Image>();
         if (fadeRoutine == null)
             fadeRoutine = StartCoroutine(_FadeOut(doneCallback));
     }
-
     private IEnumerator _FadeOut(Action doneCallback)
     {
         float tick = 0f;
-        do
+        while (fadeImage.color != visible)
         {
-            fadeImage.color = Color.Lerp(invisible, visible, tick * Time.deltaTime * speed);
+            tick += Time.deltaTime * speed;
+            fadeImage.color = Color.Lerp(invisible, visible, tick);
             yield return new WaitForEndOfFrame();
-        } while (fadeImage.color != visible);
+        }
 
         if (doneCallback != null)
             doneCallback();
+        fadeRoutine = null;
     }
 
     public void FadeIn(Action doneCallback = null)
     {
-        fadeImage = GetComponent<Image>();
         if (fadeRoutine == null)
             fadeRoutine = StartCoroutine(_FadeIn(doneCallback));
     }
-
     private IEnumerator _FadeIn(Action doneCallback)
     {
         float tick = 0f;
-        do
+        while (fadeImage.color != invisible)
         {
-            fadeImage.color = Color.Lerp(visible, invisible, tick * Time.deltaTime * speed);
+            tick += Time.deltaTime * speed;
+            fadeImage.color = Color.Lerp(visible, invisible, tick);
             yield return new WaitForEndOfFrame();
-        } while (fadeImage.color != invisible);
+        }
 
         if (doneCallback != null)
             doneCallback();
+        fadeRoutine = null;
     }
 }
