@@ -45,7 +45,6 @@ private void Update() {
 }
 
 	private void ScrollLeft() {
-		int lastRight = rightIndex;
 		layers[rightIndex].position = Vector3.right * (layers[leftIndex].position.x - backgroundSize);
 		leftIndex = rightIndex;
 		rightIndex--;
@@ -54,7 +53,6 @@ private void Update() {
 	}
 
 	private void ScrollRight() {
-		int lastleft = leftIndex;
 		layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x + backgroundSize);
 		rightIndex = leftIndex;
 		leftIndex++;

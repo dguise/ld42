@@ -88,7 +88,7 @@ public class ScrollingScript : MonoBehaviour
                         if (lastChild.isVisible == false)
                         {
                             Vector3 firstPosition = firstChild.transform.position;
-                            Vector3 firstSize = (firstChild.bounds.max - firstChild.bounds.min);
+                            //Vector3 firstSize = (firstChild.bounds.max - firstChild.bounds.min);
                             lastChild.transform.position = new Vector3(firstPosition.x - firstChild.sprite.rect.width, lastChild.transform.position.y, lastChild.transform.position.z);
                             backgroundPart.Remove(lastChild);
                             backgroundPart.Insert(0, lastChild);
