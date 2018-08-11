@@ -496,18 +496,6 @@ Prefab:
       propertyPath: m_Name
       value: Planet20097 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5.297061
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5.297061
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 5.297061
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
   m_IsPrefabAsset: 0
@@ -552,15 +540,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.1344
+      value: 2.9786432
       objectReference: {fileID: 0}
     - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.1344
+      value: 2.9786432
       objectReference: {fileID: 0}
     - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
       propertyPath: m_LocalScale.z
-      value: 2.1344
+      value: 2.9786432
+      objectReference: {fileID: 0}
+    - target: {fileID: 114873295915046696, guid: 6b04c48a40b4aaa4d9ccfb032740181b,
+        type: 2}
+      propertyPath: gravitationRadius
+      value: 13.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
@@ -603,23 +596,6 @@ Prefab:
     - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.3093774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.3093774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.3093774
-      objectReference: {fileID: 0}
-    - target: {fileID: 95604883235711262, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}

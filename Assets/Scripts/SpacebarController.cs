@@ -6,13 +6,14 @@ public class SpacebarController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    private float spaceStartTime;
-    private float spaceMaxTime = 2f;
-    private float chargePower;
-
-    public float chargePowerMax;
+    public float chargePower;
     public float turnSpeed;
-    public float chargeTrailTime;
+    public float dischargeMaxTime;
+
+    private float dischargeTime;
+    private float spaceStartTime;
+    private float chargeUpTime = 2f;
+    private float chargeFactor;
 
     private float chargeTrailTimestamp;
 
@@ -47,13 +48,14 @@ public class SpacebarController : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            rb.AddForce(-transform.up * chargePower);
+            rb.AddForce(-transform.up * chargePower * chargeFactor);
             ecp1.gameObject.SetActive(true);
             ecp2.gameObject.SetActive(true);
             ecp1.Play();
             ecp2.Play();
             DisableStuff();
             chargeTrailTimestamp = Time.time;
+            dischargeTime = dischargeMaxTime * chargeFactor;
         }
         else if (Input.GetKey(KeyCode.Space))
         {
@@ -73,7 +75,7 @@ public class SpacebarController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z + Mathf.LerpAngle(0, -5, t));
         }
 
-        if (Time.time - chargeTrailTimestamp > chargeTrailTime) {
+        if (Time.time - chargeTrailTimestamp > dischargeTime) {
             ecp1.Stop();
             ecp2.Stop();
         }
@@ -81,9 +83,8 @@ public class SpacebarController : MonoBehaviour
 
     void ChargeUp()
     {
-        float timeFactor = Mathf.Min((Time.time - spaceStartTime) / spaceMaxTime, 1f);
-        chargePower = chargePowerMax * timeFactor;
-        float scale = discStartScale + (discEndScale - discStartScale) * timeFactor;
+        chargeFactor = Mathf.Min((Time.time - spaceStartTime) / chargeUpTime, 1f);
+        float scale = discStartScale + (discEndScale - discStartScale) * chargeFactor;
         engineDisc1.transform.localScale = new Vector3(scale, scale, scale);
         engineDisc2.transform.localScale = new Vector3(scale, scale, scale);
     }
