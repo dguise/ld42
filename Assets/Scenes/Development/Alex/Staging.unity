@@ -152,25 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1355105849085692, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198247571064948696, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 1.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 198144707222754078, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 1.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114401733305367242, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: chargePower
-      value: 1000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
   m_IsPrefabAsset: 0

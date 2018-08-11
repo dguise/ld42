@@ -9,7 +9,7 @@ public class Planet : MonoBehaviour
     GameObject player;
     [Range(0.1f, 50f)]
     public float gravitation = 0.45f;
-    [Range(4, 20)]
+    [Range(4, 50)]
     public float gravitationRadius = 11f;
     [Range(-2, 2f)]
     public float rotationSpeed = 0.9f;
