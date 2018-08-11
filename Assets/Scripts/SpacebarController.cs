@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpacebarController : MonoBehaviour {
 
-    RigidBody2D rb;
+    Rigidbody2D rb;
 	void Start () {
-        rb = this.GetComponent<RigidBody2D>;
+        rb = this.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
