@@ -14,9 +14,8 @@ public class Planet : MonoBehaviour {
         
 	}
 	
-	void Update () {
-        
-        float dist = Vector2.Distance(transform.position, player.transform.position);
+	void FixedUpdate () {
+		float dist = Vector2.Distance(transform.position, player.transform.position);
 		if (dist < gravitationRadius) {
 			Vector2 force = (transform.position - player.transform.position).normalized * gravitation * (gravitationRadius - dist);
 			rbPlayer.AddForce(force);
@@ -24,7 +23,7 @@ public class Planet : MonoBehaviour {
 	}
 
 	void OnDrawGizmos() {
-        Gizmos.color = Random.ColorHSV();
+                Gizmos.color = Random.ColorHSV();
 		Gizmos.DrawWireSphere(transform.position, gravitationRadius);
 	}
 }
