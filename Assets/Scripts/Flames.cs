@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Flames : MonoBehaviour
 {
-    float shakeIntensity = 0.1f;
-    Vector3 pos;
+    public float shakeIntensity = 0.1f;
+    private Vector3 pos;
 
     void Start()
     {
