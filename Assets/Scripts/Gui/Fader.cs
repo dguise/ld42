@@ -26,7 +26,7 @@ public class Fader : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(transform.parent.gameObject);
         }
 
         fadeImage = GetComponent<Image>();

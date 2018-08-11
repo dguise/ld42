@@ -12,14 +12,15 @@ public class ScoreTracker : MonoBehaviour
     private void Start()
     {
         text = GetComponent<Text>();
+        if (GameManager.Player == null) Destroy(this);
     }
     void Update()
     {
-        /*var newScore = GameManager.Player.transform.position.x;
+        var newScore = GameManager.Player.transform.position.x;
         if (newScore > GameManager.Score)
         {
             GameManager.Score = newScore;
             text.text = newScore.ToString("N0");
-        }*/
+        }
     }
 }
