@@ -22,6 +22,16 @@ public class Planet : MonoBehaviour
 
     void FixedUpdate()
     {
+        /* Alternative way of doin it: 
+         * Or: OnTriggerENter, save object in list, every update iterate the list and addforce. Ontriggerleave remove from list
+         * var hits = Physics2D.OverlapCircleAll(transform.position, gravitationRadius);
+        foreach (var hit in hits)
+        {
+            float dist = Vector2.Distance(transform.position, hit.transform.position);
+            Vector2 force = (transform.position - hit.transform.position).normalized * gravitation * (gravitationRadius - dist);
+            rbPlayer.AddForce(force);
+        }*/
+
         float dist = Vector2.Distance(transform.position, player.transform.position);
         if (dist < gravitationRadius)
         {
