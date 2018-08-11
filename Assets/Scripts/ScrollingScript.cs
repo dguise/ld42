@@ -37,7 +37,7 @@ public class ScrollingScript : MonoBehaviour
         rbPlayer = player.GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movement = new Vector3(
       -rbPlayer.velocity.x,
@@ -49,7 +49,7 @@ public class ScrollingScript : MonoBehaviour
         //  speed.y * direction.y,
         //  0);
 
-        movement *= Time.deltaTime * parallllllllllalalllalexDistanceFromPlayer;
+        movement *= Time.fixedDeltaTime / parallllllllllalalllalexDistanceFromPlayer;
         transform.Translate(movement);
 
         if (isLooping)
