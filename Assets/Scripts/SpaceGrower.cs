@@ -21,7 +21,7 @@ public class SpaceGrower : MonoBehaviour
         if ((Input.GetButton("Fire1")))
         {
             Debug.Log("Button Fire1 is DOWN " + Input.GetButton("Fire1"));
-            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(baseScale.x, baseScale.y, baseScale.z + scalingStrength), Time.deltaTime * scalingSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(baseScale.x, baseScale.y + scalingStrength, baseScale.z), Time.deltaTime * scalingSpeed);
         }
         else
         {
