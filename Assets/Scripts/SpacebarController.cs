@@ -8,9 +8,12 @@ public class SpacebarController : MonoBehaviour {
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+        if ((Input.GetButton("Fire1")))
+        {
+            rb.AddRelativeForce(new Vector2(0.5f, 0), ForceMode2D.Impulse);
+        }
+    }
 }
