@@ -651,31 +651,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1821778905919298, guid: 1855ff7a06d3f564280f0bee992a29cc,
     type: 2}
   m_PrefabInternal: {fileID: 1338515984}
---- !u!61 &1333654187
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1333654186}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 1}
-    newSize: {x: 0.6, y: 1.57}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.88, y: 0.46}
-  m_EdgeRadius: 0
 --- !u!4 &1333654190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4581975683834664, guid: 1855ff7a06d3f564280f0bee992a29cc,
@@ -719,33 +694,6 @@ Prefab:
     - target: {fileID: 4581975683834664, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581975683834664, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 50994639770091304, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1037202570221600, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355105849085692, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 199566870497227104, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 199936777188973516, guid: 1855ff7a06d3f564280f0bee992a29cc,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1855ff7a06d3f564280f0bee992a29cc, type: 2}
