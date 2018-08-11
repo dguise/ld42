@@ -19,7 +19,7 @@ public class Planet : MonoBehaviour {
 		float dist = Vector2.Distance(transform.position, player.transform.position);
 		if (dist < gravitationRadius) {
 			Vector2 force = (transform.position - player.transform.position).normalized * gravitation * (gravitationRadius - dist);
-			Debug.Log(force.magnitude);
+			//Debug.Log(force.magnitude);
 			rbPlayer.AddForce(force);
 		}
 	}

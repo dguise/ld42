@@ -9,6 +9,11 @@ public class ScrollingScript : MonoBehaviour
     public bool isLooping = false;
     private List<SpriteRenderer> backgroundPart;
 
+    public GameObject player;
+    private Rigidbody2D rbPlayer;
+
+    public float parallllllllllalalllalexDistanceFromPlayer = 1;
+
     void Start()
     {
         if (isLooping)
@@ -28,16 +33,23 @@ public class ScrollingScript : MonoBehaviour
               t => t.transform.position.x
             ).ToList();
         }
+
+        rbPlayer = player.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Vector3 movement = new Vector3(
-          speed.x * direction.x,
+            Vector3 movement = new Vector3(
+          -rbPlayer.velocity.x,
           speed.y * direction.y,
           0);
 
-        movement *= Time.deltaTime;
+        //Vector3 movement = new Vector3(
+        //  speed.x * direction.x,
+        //  speed.y * direction.y,
+        //  0);
+
+        movement *= Time.deltaTime * parallllllllllalalllalexDistanceFromPlayer;
         transform.Translate(movement);
 
         if (isLooping)
