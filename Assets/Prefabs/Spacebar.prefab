@@ -315,9 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eaf8de97a0a544a980faff9fcd0db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargePowerMax: 500
+  chargePower: 500
   turnSpeed: 30
-  chargeTrailTime: 0.7
+  dischargeMaxTime: 0.7
 --- !u!198 &198026342994316648
 ParticleSystem:
   m_ObjectHideFlags: 1
