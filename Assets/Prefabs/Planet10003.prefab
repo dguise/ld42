@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95604883235711262}
   - component: {fileID: 114677045946683294}
   - component: {fileID: 58505199828511818}
+  - component: {fileID: 58639368184663138}
   m_Layer: 0
   m_Name: Planet10003
   m_TagString: Untagged
@@ -58,6 +59,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.85
+--- !u!58 &58639368184663138
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1609402534546190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!95 &95604883235711262
 Animator:
   serializedVersion: 3

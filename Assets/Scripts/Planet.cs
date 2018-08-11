@@ -20,7 +20,7 @@ public class Planet : MonoBehaviour
     {
         gravitationTrigger = GetComponents<CircleCollider2D>()[1];
         gravitationTrigger.isTrigger = true;
-        gravitationTrigger.radius = gravitationRadius;
+        gravitationTrigger.radius = gravitationRadius / 2;
     }
 
     void FixedUpdate()
