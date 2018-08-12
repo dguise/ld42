@@ -1,9 +1,11 @@
 ﻿using Assets.Scripts.Helper.Constants;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Helper
 {
@@ -23,7 +25,8 @@ namespace Assets.Scripts.Helper
         public static void PlayerHasFailedLetsGetRidOfHimMethod()
         {
             Player.SetActive(false);
-            //GameObject.Destroy(Player);
+
+            StaticCoroutine.Start("LoadNextScene");
         }
     }
 }
