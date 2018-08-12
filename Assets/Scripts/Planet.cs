@@ -16,31 +16,23 @@ public class Planet : MonoBehaviour
 
     private CircleCollider2D gravitationTrigger;
 
-    public float deathTime;
-    private float deathTimeStamp = 0f;
-    private bool dying = false;
-
     void Start()
     {
         gravitationTrigger = GetComponents<CircleCollider2D>()[1];
         gravitationTrigger.isTrigger = true;
         gravitationTrigger.radius = gravitationRadius / transform.localScale.x;
-
-        GetComponent<Animator>().speed = rotationSpeed;
     }
 
     void FixedUpdate()
     {
+        transform.Rotate(Vector3.forward * rotationSpeed);
+
         foreach (var objectInVicinity in objectsInRange)
         {
             float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
             float gravitationFactor = 1 - dist / gravitationRadius;
             Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * gravitationFactor;
             objectInVicinity.AddForce(force);
-        }
-
-        if (dying && Time.time - deathTimeStamp > deathTime) {
-            Destroy(gameObject);
         }
     }
 
