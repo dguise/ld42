@@ -18,6 +18,7 @@ public class ActivateAndSetSpeedTowardsPlacedPoint : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         rb.gravityScale = 0.0f;
+        rb.simulated = false;
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class ActivateAndSetSpeedTowardsPlacedPoint : MonoBehaviour
         {
             activated = true;
             direction = (goToGoTo.transform.position - this.transform.position).normalized;
+            rb.simulated = true;
         }
         else
         {

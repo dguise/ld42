@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114990354134510362}
   m_Layer: 0
   m_Name: Planet20097
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1872560017342490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.85, y: -8.08, z: 0}
+  m_LocalPosition: {x: -13.639364, y: -21.74816, z: 0}
   m_LocalScale: {x: 2.4551878, y: 2.4551878, z: 2.4551878}
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,7 +107,6 @@ MonoBehaviour:
   gravitation: 10
   gravitationRadius: 15.12
   rotationSpeed: 0.35
-  deathTime: 0
 --- !u!114 &114990354134510362
 MonoBehaviour:
   m_ObjectHideFlags: 1
