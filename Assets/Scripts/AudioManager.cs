@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -58,6 +59,35 @@ public class AudioManager : MonoBehaviour
 
         LoopSong(0);
         DontDestroyOnLoad(gameObject);
+    }
+
+    private bool shouldCharge = true;
+    public IEnumerator PlayChargingSound(int sound = 2)
+    {
+        AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        effect.clip = sounds[Mod(sound, sounds.Count)];
+        effect.loop = true;
+        effect.pitch = 0;
+        effect.volume = 0;
+        effect.Play();
+
+        while (shouldCharge)
+        {
+            if (effect.pitch < 1.2f)
+            {
+                effect.pitch += Time.deltaTime * 0.5f;
+                effect.volume += Time.deltaTime * 0.5f;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        shouldCharge = true;
+        effect.Stop();
+        Destroy(effect);
+        PlaySound(0);
+    }
+    public void StopCharging()
+    {
+        shouldCharge = false;
     }
 
     public void PlaySound(int sound)
