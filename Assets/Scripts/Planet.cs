@@ -60,7 +60,7 @@ public class Planet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
-            GameManager.Player.gameObject.SetActive(false);
+            GameManager.PlayerHasFailedLetsGetRidOfHimMethod();
 
     }
 }
