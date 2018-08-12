@@ -32,6 +32,8 @@ public class AudioManager : MonoBehaviour
             , "impact2"     // 11
             , "impact3"     // 12
             , "astrocollect" // 13
+            , "pickup_fc"   // 14
+            , "pickup_fcsuper" // 15
         };
 
     public static string[] Songs = { "chargeup" };

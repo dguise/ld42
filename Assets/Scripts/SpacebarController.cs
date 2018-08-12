@@ -171,12 +171,14 @@ public class SpacebarController : MonoBehaviour
         if (collider.tag == Tags.Fuel)
         {
             GainFuel(1);
+            AudioManager.instance.PlaySound(14);
             Destroy(collider.gameObject);
         }
         else if (collider.tag == Tags.SuperFuel)
         {
             GainFuel(1);
             StartCoroutine(SuperBoost());
+            AudioManager.instance.PlaySound(15);
             Destroy(collider.gameObject);
         }
         else if (collider.tag == Tags.Astroboi)
@@ -184,6 +186,10 @@ public class SpacebarController : MonoBehaviour
             AudioManager.instance.PlaySound(13);
             if (OnGainScore != null)
                 OnGainScore();
+        }
+        else
+        {
+            AudioManager.instance.PlayRandomize(0, 10, 11, 12);
         }
     }
 
