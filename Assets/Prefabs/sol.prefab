@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 212726508812175650}
   - component: {fileID: 114081851405704084}
   - component: {fileID: 114065978605866336}
+  - component: {fileID: 58699081546331358}
+  - component: {fileID: 114134449860027578}
   m_Layer: 0
   m_Name: sol
   m_TagString: Untagged
@@ -73,6 +75,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58699081546331358
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285930441506648}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.8
 --- !u!114 &114065978605866336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +118,17 @@ MonoBehaviour:
   rotationX: 0
   rotationY: 0
   rotationZ: 0.05
+--- !u!114 &114134449860027578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285930441506648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac09b4a3ce6da8d49a42f1c6932dc6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114690864090857700
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58309554654845972}
   - component: {fileID: 114864716274367256}
   - component: {fileID: 58081638883816360}
+  - component: {fileID: 114760879201870034}
   m_Layer: 0
   m_Name: Planet40001
   m_TagString: Untagged
@@ -92,6 +93,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114760879201870034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037233972154026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac09b4a3ce6da8d49a42f1c6932dc6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114864716274367256
 MonoBehaviour:
   m_ObjectHideFlags: 1
