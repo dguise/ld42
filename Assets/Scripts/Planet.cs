@@ -56,4 +56,11 @@ public class Planet : MonoBehaviour
         if (rb != null)
             objectsInRange.Remove(rb);
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+            GameManager.Player.gameObject.SetActive(false);
+
+    }
 }

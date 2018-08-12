@@ -19,5 +19,10 @@ namespace Assets.Scripts.Helper
     {
         public static GameObject Player { get; set; }
         public static float Score { get; set; }
+
+        public static void PlayerHasFailedLetsGetRidOfHimMethod()
+        {
+            GameObject.Destroy(Player);
+        }
     }
 }
