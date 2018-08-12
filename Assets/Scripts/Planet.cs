@@ -29,6 +29,11 @@ public class Planet : MonoBehaviour
 
         foreach (var objectInVicinity in objectsInRange)
         {
+            if (objectInVicinity == null) {
+                objectsInRange.Remove(objectInVicinity);
+                break;
+            }
+
             float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
             float gravitationFactor = 1 - dist / gravitationRadius;
             Vector2 force = (transform.position - objectInVicinity.transform.position).normalized * gravitation * gravitationFactor;
