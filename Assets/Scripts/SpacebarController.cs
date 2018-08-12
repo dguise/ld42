@@ -187,10 +187,11 @@ public class SpacebarController : MonoBehaviour
             if (OnGainScore != null)
                 OnGainScore();
         }
-        else
-        {
-            AudioManager.instance.PlayRandomize(0, 10, 11, 12);
-        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioManager.instance.PlayRandomize(0, 10, 11, 12);
     }
 
     private IEnumerator SuperBoost()
