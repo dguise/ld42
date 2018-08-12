@@ -14,7 +14,7 @@ public class DeathScreenManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (KeyDown())
         {
             GameManager.Score = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -24,5 +24,8 @@ public class DeathScreenManager : MonoBehaviour
             Application.Quit();
         }
     }
-
+    bool KeyDown()
+    {
+        return (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0));
+    }
 }
