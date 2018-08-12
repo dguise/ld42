@@ -84,12 +84,14 @@ public class SpacebarController : MonoBehaviour
             spaceStartTime = Time.time;
             charging = true;
             FuelCanisters--;
+            StartCoroutine(AudioManager.instance.PlayChargingSound());
             if (OnFuelUse != null)
                 OnFuelUse();
         }
         //Input.GetKeyUp(KeyCode.Space
         else if (KeyUp() && charging)
         {
+            AudioManager.instance.StopCharging();
             charging = false;
             Boost(chargePower * chargeFactor);
         }

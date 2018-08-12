@@ -15,6 +15,11 @@ namespace Assets.Scripts.Helper
         {
             GameManager.Player = GameObject.FindWithTag(Tags.Player);
         }
+
+        private void Start()
+        {
+            Fader.Instance.FadeIn();
+        }
     }
 
     public static class GameManager
@@ -24,9 +29,16 @@ namespace Assets.Scripts.Helper
 
         public static void PlayerHasFailedLetsGetRidOfHimMethod()
         {
-            Player.SetActive(false);
+            // Player.SetActive(false);
+            Player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            Player.transform.localScale = Vector3.zero;
+            Fader.Instance.FadeOut(LoadNextScene);
+            //StaticCoroutine.Start("LoadNextScene");
+        }
 
-            StaticCoroutine.Start("LoadNextScene");
+        private static void LoadNextScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
