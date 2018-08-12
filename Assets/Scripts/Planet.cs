@@ -11,7 +11,7 @@ public class Planet : MonoBehaviour
     public float gravitation = 0.45f;
     [Range(4, 50)]
     public float gravitationRadius = 11f;
-    [Range(-2, 2f)]
+    [Range(0f, 10f)]
     public float rotationSpeed = 0.9f;
 
     private CircleCollider2D gravitationTrigger;
@@ -25,12 +25,12 @@ public class Planet : MonoBehaviour
         gravitationTrigger = GetComponents<CircleCollider2D>()[1];
         gravitationTrigger.isTrigger = true;
         gravitationTrigger.radius = gravitationRadius / transform.localScale.x;
+
+        GetComponent<Animator>().speed = rotationSpeed;
     }
 
     void FixedUpdate()
     {
-        transform.Rotate(Vector3.forward * rotationSpeed);
-
         foreach (var objectInVicinity in objectsInRange)
         {
             float dist = Vector2.Distance(transform.position, objectInVicinity.transform.position);
