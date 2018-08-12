@@ -8,6 +8,7 @@ TagManager:
   - SuperFuel
   - Sun
   - Planet
+  - Astroboi
   layers:
   - Default
   - TransparentFX

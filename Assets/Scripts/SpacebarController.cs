@@ -186,6 +186,8 @@ public class SpacebarController : MonoBehaviour
             AudioManager.instance.PlaySound(13);
             if (OnGainScore != null)
                 OnGainScore();
+
+            Destroy(collider.gameObject);
         }
     }
 
