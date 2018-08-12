@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 114401733305367242}
   - component: {fileID: 50994639770091304}
   - component: {fileID: 61707894763560294}
-  - component: {fileID: 61625078384663800}
   m_Layer: 9
   m_Name: Spacebar
   m_TagString: Player
@@ -205,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821778905919298}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -16.73, y: -7.85, z: 0}
+  m_LocalPosition: {x: -1.8, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4595059858516622}
@@ -280,31 +279,6 @@ CircleCollider2D:
   m_Offset: {x: 0.016416498, y: 0.041395243}
   serializedVersion: 2
   m_Radius: 0.11
---- !u!61 &61625078384663800
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821778905919298}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 1}
-    newSize: {x: 0.6, y: 1.57}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.88, y: 0.46}
-  m_EdgeRadius: 0
 --- !u!61 &61707894763560294
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -344,6 +318,7 @@ MonoBehaviour:
   chargePower: 1000
   turnSpeed: 30
   dischargeMaxTime: 0.7
+  startingFuel: 3
 --- !u!198 &198026342994316648
 ParticleSystem:
   m_ObjectHideFlags: 1

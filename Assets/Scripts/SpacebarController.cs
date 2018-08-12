@@ -9,11 +9,13 @@ public class SpacebarController : MonoBehaviour
     public float chargePower;
     public float turnSpeed;
     public float dischargeMaxTime;
+    [Range(1, 10)] public int startingFuel = 3;
 
     private float dischargeTime;
     private float spaceStartTime;
     private float chargeUpTime = 2f;
     private float chargeFactor;
+    private bool charging = false;
 
     private float chargeTrailTimestamp;
 
@@ -28,6 +30,12 @@ public class SpacebarController : MonoBehaviour
     private ParticleSystem ecp1;
     private ParticleSystem ecp2;
 
+    public int FuelCanisters { get; internal set; }
+    public delegate void FuelCanisterPickup();
+    public event FuelCanisterPickup OnFuelPickup;
+    public delegate void FuelCanisterUse();
+    public event FuelCanisterPickup OnFuelUse;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -38,16 +46,23 @@ public class SpacebarController : MonoBehaviour
 
         ecp1 = transform.Find("EngineChargeParticles1").GetComponent<ParticleSystem>();
         ecp2 = transform.Find("EngineChargeParticles2").GetComponent<ParticleSystem>();
+
+        GainFuel(startingFuel);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && FuelCanisters > 0)
         {
             spaceStartTime = Time.time;
+            charging = true;
+            FuelCanisters--;
+            if (OnFuelUse != null)
+                OnFuelUse();
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space) && charging)
         {
+            charging = false;
             rb.AddForce(-transform.up * chargePower * chargeFactor);
             ecp1.gameObject.SetActive(true);
             ecp2.gameObject.SetActive(true);
@@ -57,7 +72,7 @@ public class SpacebarController : MonoBehaviour
             chargeTrailTimestamp = Time.time;
             dischargeTime = dischargeMaxTime * chargeFactor;
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Space) && charging)
         {
             if (!engineDisc1.gameObject.activeSelf)
                 EnableStuff();
@@ -107,5 +122,25 @@ public class SpacebarController : MonoBehaviour
         ps2.gameObject.SetActive(true);
         ps1.Play();
         ps2.Play();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Fuel")
+        {
+            GainFuel(1);
+            Destroy(collider.gameObject);
+        }
+    }
+
+    public void GainFuel(int quantity)
+    {
+        for (int i = 0; i < quantity; i++)
+        {
+            FuelCanisters++;
+            if (OnFuelPickup != null)
+                OnFuelPickup();
+
+        }
     }
 }
