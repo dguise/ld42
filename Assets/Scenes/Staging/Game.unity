@@ -240,6 +240,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 1190274845409606, guid: 66502e4d9276ab546bc3137e7bde4e37, type: 2}
+      propertyPath: m_Name
+      value: GameSceneInitializer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66502e4d9276ab546bc3137e7bde4e37, type: 2}
   m_IsPrefabAsset: 0

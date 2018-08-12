@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
             sounds.Add(Resources.Load<AudioClip>(sound) as AudioClip);
         }
 
-        LoopSong(0);
+        //LoopSong(0);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -67,8 +67,8 @@ public class AudioManager : MonoBehaviour
         AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
         effect.clip = sounds[Mod(sound, sounds.Count)];
         effect.loop = true;
-        effect.pitch = 0;
-        effect.volume = 0;
+        effect.pitch = 0.1f;
+        effect.volume = 0.2f;
         effect.Play();
 
         while (shouldCharge)

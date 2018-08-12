@@ -17,6 +17,7 @@ public class MoveSun : MonoBehaviour {
 
     void Update () {
 		Vector3 v = transform.position;
+
 		if (player.position.x - transform.position.x > rubberBandRadius) {
 			v.x = player.position.x - rubberBandRadius;
 		}
