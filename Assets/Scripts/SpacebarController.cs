@@ -71,7 +71,7 @@ public class SpacebarController : MonoBehaviour
     {
         //transform.LookAt(CrossPlatformInputManager.mousePosition); //Funkar men blir för 3d, lul
         //if mobile ?
-        if (Key())
+        if (Input.GetMouseButton(0) || Input.GetAxis("Mouse X") != 0)
         {
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
@@ -181,7 +181,7 @@ public class SpacebarController : MonoBehaviour
         }
         else if (collider.tag == Tags.Astroboi)
         {
-            AudioManager.instance.PlayRandomize(3, 5);
+            AudioManager.instance.PlaySound(13);
             if (OnGainScore != null)
                 OnGainScore();
         }
