@@ -13,9 +13,8 @@ public class AnykeyToContinue : MonoBehaviour
     bool doOnce = true;
     void Update()
     {
-        if (doOnce && Input.anyKeyDown)
+        if (Input.anyKeyDown)
         {
-            doOnce = false;
             Fader.Instance.FadeOut(FadeOutComplete);
         }
     }
@@ -23,6 +22,10 @@ public class AnykeyToContinue : MonoBehaviour
 
     void FadeOutComplete()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (doOnce)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            doOnce = false;
+        }
     }
 }

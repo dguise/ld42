@@ -12,11 +12,17 @@ public class ScoreTracker : MonoBehaviour
     private void Start()
     {
         text = GetComponent<Text>();
-        if (GameManager.Player == null) Destroy(this);
+        if (GameManager.Player != null)
+        {
+            var playerController = GameManager.Player.GetComponent<SpacebarController>();
+            if (playerController != null)
+                playerController.OnGainScore += OnScore;
+        }
     }
-    void Update()
+
+    void OnScore()
     {
-        var newScore = GameManager.Player.transform.position.x;
+        var newScore = GameManager.Score++;
         if (newScore > GameManager.Score)
         {
             GameManager.Score = newScore;

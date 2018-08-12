@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Helper.Constants;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -37,6 +38,9 @@ public class SpacebarController : MonoBehaviour
     public delegate void FuelCanisterUse();
     public event FuelCanisterPickup OnFuelUse;
 
+    public delegate void GainScore();
+    public event GainScore OnGainScore;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -74,8 +78,6 @@ public class SpacebarController : MonoBehaviour
             diff *= -1;
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-           // Debug.Log("pos = " + Input.mousePosition);
-
         }
 
         //Input.GetKeyDown(KeyCode.Space
@@ -166,16 +168,22 @@ public class SpacebarController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Fuel")
+        if (collider.tag == Tags.Fuel)
         {
             GainFuel(1);
             Destroy(collider.gameObject);
         }
-        else if (collider.tag == "SuperFuel")
+        else if (collider.tag == Tags.SuperFuel)
         {
             GainFuel(1);
             StartCoroutine(SuperBoost());
             Destroy(collider.gameObject);
+        }
+        else if (collider.tag == Tags.Astroboi)
+        {
+            AudioManager.instance.PlayRandomize(3, 5);
+            if (OnGainScore != null)
+                OnGainScore();
         }
     }
 
