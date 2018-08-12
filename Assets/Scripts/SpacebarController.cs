@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class SpacebarController : MonoBehaviour
 {
@@ -64,7 +65,21 @@ public class SpacebarController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && FuelCanisters > 0)
+        //transform.LookAt(CrossPlatformInputManager.mousePosition); //Funkar men blir för 3d, lul
+        //if mobile ?
+        if (Key())
+        {
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            diff.Normalize();
+            diff *= -1;
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+           // Debug.Log("pos = " + Input.mousePosition);
+
+        }
+
+        //Input.GetKeyDown(KeyCode.Space
+        if (KeyDown() && FuelCanisters > 0)
         {
             spaceStartTime = Time.time;
             charging = true;
@@ -72,12 +87,14 @@ public class SpacebarController : MonoBehaviour
             if (OnFuelUse != null)
                 OnFuelUse();
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && charging)
+        //Input.GetKeyUp(KeyCode.Space
+        else if (KeyUp() && charging)
         {
             charging = false;
             Boost(chargePower * chargeFactor);
         }
-        else if (Input.GetKey(KeyCode.Space) && charging)
+        //Input.GetKey(KeyCode.Space
+        else if (Key() && charging)
         {
             if (!engineDisc1.gameObject.activeSelf)
                 EnableStuff();
@@ -99,6 +116,18 @@ public class SpacebarController : MonoBehaviour
             ecp1.Stop();
             ecp2.Stop();
         }
+    }
+    bool KeyDown()
+    {
+        return (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0));
+    }
+    bool KeyUp()
+    {
+        return (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0));
+    }
+    bool Key()
+    {
+        return (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0));
     }
 
     void ChargeUp()
