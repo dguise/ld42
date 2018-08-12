@@ -10,6 +10,8 @@ public class MoveSun : MonoBehaviour {
     float speed = 3;
     float rubberBandRadius = 54;
 
+    private float startSoundDistance = 20;
+
     private void Start()
     {
         player = GameManager.Player.transform;
@@ -17,11 +19,14 @@ public class MoveSun : MonoBehaviour {
 
     void Update () {
 		Vector3 v = transform.position;
+        var distance = player.position.x - transform.position.x;
 
-		if (player.position.x - transform.position.x > rubberBandRadius) {
+        if (distance > rubberBandRadius) {
 			v.x = player.position.x - rubberBandRadius;
 		}
 		v.x += speed * Time.deltaTime;
 		transform.position = v;
+
+        AudioManager.instance.ChangeBurningVolume(1 - (distance - 25) / startSoundDistance);
 	}
 }

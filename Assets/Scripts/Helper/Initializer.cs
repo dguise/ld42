@@ -29,11 +29,10 @@ namespace Assets.Scripts.Helper
 
         public static void PlayerHasFailedLetsGetRidOfHimMethod()
         {
-            // Player.SetActive(false);
             Player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             Player.transform.localScale = Vector3.zero;
+            AudioManager.instance.PlayRandomize(0, 7, 8, 9);
             Fader.Instance.FadeOut(LoadNextScene);
-            //StaticCoroutine.Start("LoadNextScene");
         }
 
         private static void LoadNextScene()
