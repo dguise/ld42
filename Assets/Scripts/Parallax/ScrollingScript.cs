@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Helper;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -9,13 +10,14 @@ public class ScrollingScript : MonoBehaviour
     public bool isLooping = false;
     private List<SpriteRenderer> backgroundPart;
 
-    public GameObject player;
+    GameObject player;
     private Rigidbody2D rbPlayer;
 
     public float parallllllllllalalllalexDistanceFromPlayer = 1;
 
     void Start()
     {
+        player = GameManager.Player;
         if (isLooping)
         {
             backgroundPart = new List<SpriteRenderer>();

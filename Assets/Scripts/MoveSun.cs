@@ -1,19 +1,21 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Helper;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveSun : MonoBehaviour {
-	public float speed;
-	public Transform player;
-	public float rubberBandRadius;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    Transform player;
+
+    float speed = 3;
+    float rubberBandRadius = 54;
+
+    private void Start()
+    {
+        player = GameManager.Player.transform;
+    }
+
+    void Update () {
 		Vector3 v = transform.position;
 		if (player.position.x - transform.position.x > rubberBandRadius) {
 			v.x = player.position.x - rubberBandRadius;
