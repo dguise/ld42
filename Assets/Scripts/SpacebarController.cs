@@ -107,7 +107,8 @@ public class SpacebarController : MonoBehaviour
         float scale = discStartScale + (discEndScale - discStartScale) * chargeFactor;
         engineDisc1.transform.localScale = new Vector3(scale, scale, scale);
         engineDisc2.transform.localScale = new Vector3(scale, scale, scale);
-        Camera.main.GetComponent<CameraShake>().Shake();
+        
+        Camera.main.GetComponent<CameraShake>().Shake(chargeFactor, chargeFactor);
     }
 
     void DisableStuff()
