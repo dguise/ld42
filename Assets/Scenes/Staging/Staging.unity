@@ -380,16 +380,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1333654190}
-    - target: {fileID: 114065978605866336, guid: 82b8f990c726a7044ba171755696373e,
-        type: 2}
-      propertyPath: rubberBandRadius
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 114065978605866336, guid: 82b8f990c726a7044ba171755696373e,
-        type: 2}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b8f990c726a7044ba171755696373e, type: 2}
   m_IsPrefabAsset: 0
@@ -431,33 +421,6 @@ Prefab:
     - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.3425927
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.3425927
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.3425927
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: gravitationRadius
-      value: 14.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: gravitation
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
@@ -716,6 +679,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1305051197487898, guid: 1a8e5606a8c1281448815b8d2702d07d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a8e5606a8c1281448815b8d2702d07d, type: 2}
   m_IsPrefabAsset: 0
@@ -927,28 +894,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.4551878
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.4551878
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307549213081898, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.4551878
-      objectReference: {fileID: 0}
-    - target: {fileID: 114873295915046696, guid: 6b04c48a40b4aaa4d9ccfb032740181b,
-        type: 2}
-      propertyPath: gravitationRadius
-      value: 15.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114873295915046696, guid: 6b04c48a40b4aaa4d9ccfb032740181b,
-        type: 2}
-      propertyPath: gravitation
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b04c48a40b4aaa4d9ccfb032740181b, type: 2}
   m_IsPrefabAsset: 0
@@ -1064,7 +1009,9 @@ Prefab:
       propertyPath: rotationSpeed
       value: 0.52
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1333654186 stripped
@@ -1213,33 +1160,6 @@ Prefab:
     - target: {fileID: 1609402534546190, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
       propertyPath: m_Name
       value: Planet10003 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.8954577
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.8954577
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.8954577
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: gravitationRadius
-      value: 17.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: gravitation
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114677045946683294, guid: d6a6543e5c040624dbce3f219ba802c6,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: -0.62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a6543e5c040624dbce3f219ba802c6, type: 2}

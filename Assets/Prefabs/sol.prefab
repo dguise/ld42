@@ -41,9 +41,11 @@ GameObject:
   - component: {fileID: 114065978605866336}
   - component: {fileID: 58699081546331358}
   - component: {fileID: 114134449860027578}
+  - component: {fileID: 50782415324082066}
+  - component: {fileID: 114976071081563482}
   m_Layer: 0
   m_Name: sol
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,13 +70,33 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285930441506648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.84, y: 0.31521, z: -0.18852997}
+  m_LocalPosition: {x: -48.71, y: 0.31521, z: -0.18852997}
   m_LocalScale: {x: 3.0948, y: 3.0948, z: 6.1896}
   m_Children:
   - {fileID: 4599331624862430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50782415324082066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285930441506648}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58699081546331358
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -101,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a458d5dfdbd6644da474a2e13a3fdde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   player: {fileID: 0}
-  rubberBandRadius: 50
+  rubberBandRadius: 54
 --- !u!114 &114081851405704084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +163,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeIntensity: 0.8
+--- !u!114 &114976071081563482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285930441506648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce1928a99d394043a15715e15ad2ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flame: {fileID: 1451147560528330, guid: 05f36e79d94ac9447b89a7ce14ed90d1, type: 2}
+  offset: 1
+  flameScaleFactor: {x: 0.8, y: 0.4, z: 0.4}
 --- !u!212 &212726508812175650
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -175,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 11cb41e7ec783bf4a9e7b8def7ffb6b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
