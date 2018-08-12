@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class ActivateAndSetSpeedTowardsPlacedPoint : MonoBehaviour
 {
     private Vector3 direction;
     public float speed = 1.0f;
     private GameObject goToGoTo;
     private bool activated = false;
+    private Rigidbody2D rb;
 
     void Start()
     {
         goToGoTo = this.transform.GetChild(0).gameObject;
+        rb = this.GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
+        rb.gravityScale = 0.0f;
     }
 
     void Update()
