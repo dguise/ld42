@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AstroidDestroyer : MonoBehaviour {
+public class DestroyOnPlanetCollision : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "Planet") {
 			Destroy(gameObject);
