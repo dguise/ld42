@@ -22,7 +22,8 @@ namespace Assets.Scripts.Helper
 
         public static void PlayerHasFailedLetsGetRidOfHimMethod()
         {
-            GameObject.Destroy(Player);
+            Player.SetActive(false);
+            //GameObject.Destroy(Player);
         }
     }
 }
