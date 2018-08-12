@@ -8,7 +8,7 @@ public class UiFuelListener : MonoBehaviour
     public GameObject fuelImageObject;
     List<GameObject> fuelObjects = new List<GameObject>();
 
-    void Start()
+    void OnEnable()
     {
         var player = GameManager.Player.GetComponent<SpacebarController>();
         player.OnFuelPickup += FuelPickup;
