@@ -50,6 +50,18 @@ public class SpacebarController : MonoBehaviour
         GainFuel(startingFuel);
     }
 
+    void Boost(float power)
+    {
+        rb.AddForce(-transform.up * power);
+        ecp1.gameObject.SetActive(true);
+        ecp2.gameObject.SetActive(true);
+        ecp1.Play();
+        ecp2.Play();
+        DisableStuff();
+        chargeTrailTimestamp = Time.time;
+        dischargeTime = dischargeMaxTime * chargeFactor;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && FuelCanisters > 0)
@@ -63,14 +75,7 @@ public class SpacebarController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space) && charging)
         {
             charging = false;
-            rb.AddForce(-transform.up * chargePower * chargeFactor);
-            ecp1.gameObject.SetActive(true);
-            ecp2.gameObject.SetActive(true);
-            ecp1.Play();
-            ecp2.Play();
-            DisableStuff();
-            chargeTrailTimestamp = Time.time;
-            dischargeTime = dischargeMaxTime * chargeFactor;
+            Boost(chargePower * chargeFactor);
         }
         else if (Input.GetKey(KeyCode.Space) && charging)
         {
@@ -131,6 +136,25 @@ public class SpacebarController : MonoBehaviour
             GainFuel(1);
             Destroy(collider.gameObject);
         }
+        else if (collider.tag == "SuperFuel")
+        {
+            GainFuel(1);
+            StartCoroutine(SuperBoost());
+            Destroy(collider.gameObject);
+        }
+    }
+
+    private IEnumerator SuperBoost()
+    {
+        var start = 0f;
+
+        while (start < 3f)
+        {
+            Boost(10);
+            start += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+
+        }
     }
 
     public void GainFuel(int quantity)
@@ -140,7 +164,6 @@ public class SpacebarController : MonoBehaviour
             FuelCanisters++;
             if (OnFuelPickup != null)
                 OnFuelPickup();
-
         }
     }
 }

@@ -27,7 +27,7 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
     }
 
     // TODO: Understand this :torkarsvett:
-    void Update()
+    void LateUpdate()
     {
         var screenPos = mainCam.WorldToScreenPoint(player.transform.position);
 

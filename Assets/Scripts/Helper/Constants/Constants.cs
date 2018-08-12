@@ -8,6 +8,8 @@ namespace Assets.Scripts.Helper.Constants
     public static class Tags
     {
         public static string Player = "Player";
+        public static string Fuel = "Fuel";
+        public static string SuperFuel = "SuperFuel";
     }
 
     public static class Layers
