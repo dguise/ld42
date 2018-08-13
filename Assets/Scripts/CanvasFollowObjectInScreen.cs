@@ -23,6 +23,8 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
     public delegate void OutsideScreenToggle(bool isOutside);
     public event OutsideScreenToggle OnOutsideScreenToggle;
 
+    private bool isPlayerDead = false;
+
     void Start()
     {
         player = GameManager.Player;
@@ -61,8 +63,10 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
             }
             timeLeftOutsideBeforeDeath -= Time.deltaTime;
             countdownText.text = timeLeftOutsideBeforeDeath.ToString("n2");
-            if (timeLeftOutsideBeforeDeath < 0)
+            if (!isPlayerDead && timeLeftOutsideBeforeDeath < 0) {
+                isPlayerDead = true;
                 GameManager.PlayerHasFailedLetsGetRidOfHimMethod();
+            }
 
 
             parentCanvas.enabled = true;
