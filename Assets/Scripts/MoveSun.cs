@@ -7,7 +7,7 @@ public class MoveSun : MonoBehaviour {
 
     Transform player;
 
-    public float speed = 3;
+    public float speed = 2;
     public float rubberBandRadius = 54;
 
     private float startBurningSoundDistance = 20;
@@ -16,13 +16,13 @@ public class MoveSun : MonoBehaviour {
     private void Start()
     {
         player = GameManager.Player.transform;
-        speed = speed / 2;
+        speed = speed / 3;
         Invoke("IncreaseSpeed", 10);
     }
 
     void IncreaseSpeed()
     {
-        speed *= 2;
+        speed *= 3;
     }
 
     void Update () {

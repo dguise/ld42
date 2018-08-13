@@ -320,7 +320,7 @@ Transform:
   m_LocalScale: {x: 0.43301713, y: 0.43301713, z: 0.43301713}
   m_Children: []
   m_Father: {fileID: 1497679766}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680086947
 GameObject:
@@ -791,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974211eedda0fc5419b34cb14bc2c3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 2
 --- !u!4 &1497679766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4934679109241968, guid: d6a6543e5c040624dbce3f219ba802c6,
@@ -895,7 +896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541753326709048, guid: 9b4c436dd4a32a04d897c4768cb4c396, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4c436dd4a32a04d897c4768cb4c396, type: 2}
@@ -1065,6 +1066,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224457828711643546, guid: 1a8e5606a8c1281448815b8d2702d07d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a8e5606a8c1281448815b8d2702d07d, type: 2}

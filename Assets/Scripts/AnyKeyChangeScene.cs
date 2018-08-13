@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathScreenManager : MonoBehaviour
+public class AnyKeyChangeScene : MonoBehaviour
 {
+    public int scene = 3;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class DeathScreenManager : MonoBehaviour
         if (KeyDown())
         {
             GameManager.Score = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(scene);
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
