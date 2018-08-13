@@ -15,6 +15,7 @@ public class Planet : MonoBehaviour
     public float rotationSpeed = 0.9f;
 
     private CircleCollider2D gravitationTrigger;
+    public ParticleSystem ps;
 
     void Start()
     {
@@ -52,13 +53,22 @@ public class Planet : MonoBehaviour
     {
         var rb = collider.GetComponent<Rigidbody2D>();
         if (rb != null)
+        {
             objectsInRange.Add(rb);
+            if (collider.tag == "Player")
+                if (!ps.gameObject.activeSelf)
+                    ps.gameObject.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
         var rb = collider.GetComponent<Rigidbody2D>();
         if (rb != null)
+        {
             objectsInRange.Remove(rb);
+            if (ps.gameObject.activeSelf)
+                ps.gameObject.SetActive(false);
+        }
     }
 }
