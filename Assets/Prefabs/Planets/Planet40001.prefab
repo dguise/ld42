@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114864716274367256}
   - component: {fileID: 58081638883816360}
   - component: {fileID: 114760879201870034}
+  - component: {fileID: 114913735538320588}
   m_Layer: 0
   m_Name: Planet40001
   m_TagString: Planet
@@ -150,6 +151,17 @@ MonoBehaviour:
   gravitationRadius: 14.7
   rotationSpeed: 0.9
   ps: {fileID: 198259645029846372}
+--- !u!114 &114913735538320588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037233972154026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529a0aa6fa86f044faaea06b5d63a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198259645029846372
 ParticleSystem:
   m_ObjectHideFlags: 1

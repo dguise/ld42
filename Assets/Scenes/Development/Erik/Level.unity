@@ -14471,19 +14471,6 @@ Prefab:
       propertyPath: m_Name
       value: Asteroid (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4708614782471642, guid: 1f491c933f3ed9c449690d6042952aff, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -6.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708614782471642, guid: 1f491c933f3ed9c449690d6042952aff, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -9.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 114146917780454512, guid: 1f491c933f3ed9c449690d6042952aff,
-        type: 2}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f491c933f3ed9c449690d6042952aff, type: 2}
   m_IsPrefabAsset: 0

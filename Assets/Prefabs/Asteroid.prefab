@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 60045302708396652}
   - component: {fileID: 114146917780454512}
   - component: {fileID: 114302491064723774}
+  - component: {fileID: 114869004839151180}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1380335816627248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 767.44, y: 12.060001, z: 0}
+  m_LocalPosition: {x: -316.72824, y: 4.4764924, z: 0}
   m_LocalScale: {x: 1.6136, y: 1.6136, z: 1.6136}
   m_Children:
   - {fileID: 4708614782471642}
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078564354170918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -20.05, z: 0}
+  m_LocalPosition: {x: -9.65, y: -6.05, z: 0}
   m_LocalScale: {x: 0.61973226, y: 0.61973226, z: 0.61973226}
   m_Children: []
   m_Father: {fileID: 4246143551595772}
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d4daebd66372e4f9bbc59c229b9264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
 --- !u!114 &114302491064723774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,6 +189,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dcec9293b501834789cfceda6f5ff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114869004839151180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380335816627248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529a0aa6fa86f044faaea06b5d63a2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212392315194330500

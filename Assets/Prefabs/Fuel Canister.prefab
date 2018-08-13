@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212511191906006042}
   - component: {fileID: 95096689666598066}
   - component: {fileID: 58307967575829466}
+  - component: {fileID: 114902259855270380}
   m_Layer: 0
   m_Name: Fuel Canister
   m_TagString: Fuel
@@ -75,6 +76,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114902259855270380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526559605426854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529a0aa6fa86f044faaea06b5d63a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212511191906006042
 SpriteRenderer:
   m_ObjectHideFlags: 1
