@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class SpacebarController : MonoBehaviour
@@ -193,6 +194,13 @@ public class SpacebarController : MonoBehaviour
                 OnGainScore();
 
             Destroy(collider.gameObject);
+        }
+        else if (collider.tag == "WinOnTouch")
+        {
+            Fader.Instance.FadeOut(() =>
+            {
+                SceneManager.LoadScene("5_WinScreen");
+            });
         }
     }
 

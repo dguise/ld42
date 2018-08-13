@@ -9,6 +9,7 @@ TagManager:
   - Sun
   - Planet
   - Astroboi
+  - WinOnTouch
   layers:
   - Default
   - TransparentFX
