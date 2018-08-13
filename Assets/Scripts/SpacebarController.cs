@@ -202,6 +202,8 @@ public class SpacebarController : MonoBehaviour
 
         if (collision.gameObject.tag == "Planet") {
             psDeath.Play();
+            Destroy(ecp1);
+            Destroy(ecp2);
             enabled = false;
         }
     }
