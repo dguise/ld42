@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour
         SceneManager.activeSceneChanged += StopAllSounds;
     }
 
-    public void PlaySound(int sound)
+    public void PlaySound(int sound, float pitch = 1f)
     {
         AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
         tempSounds.Add(effect);
@@ -85,6 +85,12 @@ public class AudioManager : MonoBehaviour
         if (sound == 0)
         {
             effect.volume = 0.5f;
+        }
+        else if (sound == 14) 
+        {
+            effect.volume = 0.4f;
+        } else if (sound == 15) {
+            effect.volume = 0.2f;
         }
         effect.Play();
         Destroy(effect, effect.clip.length + 0.2f);
