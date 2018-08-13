@@ -9,9 +9,4 @@ public class SetAudioListenerVolume : MonoBehaviour {
 	void Start () {
 		AudioListener.volume = volume;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
