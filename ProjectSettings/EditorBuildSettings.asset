@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Staging/2_InfoScreen.unity
     guid: af0533b0c33b2b4449cff93b0b529e98
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Development/Emil/Level.unity
     guid: ecfbab7d544361c4c8647aab1abe3986
