@@ -4,13 +4,12 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
     private AudioSource musicPlayer;
-    private AudioClip musicLoop;
+    private AudioSource musicPlayerTwo;
     private AudioSource burningLoop;
 
     private List<AudioClip> songs = new List<AudioClip>();
@@ -19,6 +18,7 @@ public class AudioManager : MonoBehaviour
     private List<AudioSource> tempSounds = new List<AudioSource>();
 
     private int currentTrack = 0;
+    private int currentTrackTwo = 0;
 
     public static string[] Sounds = {
             "boost"         // 0
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
             , "pickup_fcsuper" // 15
         };
 
-    public static string[] Songs = { "chargeup" };
+    public static string[] Songs = { "speep_danger", "speep_normal" };
 
     void Start()
     {
@@ -52,7 +52,8 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        musicPlayer = GetComponent<AudioSource>();
+        musicPlayer = gameObject.AddComponent<AudioSource>();
+        musicPlayerTwo = gameObject.AddComponent<AudioSource>();
         
         foreach (string song in Songs)
         {
@@ -65,7 +66,8 @@ public class AudioManager : MonoBehaviour
         }
 
         // When songs added:
-        //LoopSong(0);
+        LoopSongOne(0);
+        LoopSongTwo(1);
 
         burningLoop = gameObject.AddComponent<AudioSource>();
         burningLoop.clip = sounds[1];
@@ -107,12 +109,21 @@ public class AudioManager : MonoBehaviour
         Destroy(effect, effect.clip.length);
     }
 
-    public void LoopSong(int number)
+    public void LoopSongOne(int number)
     {
         currentTrack = number;
         musicPlayer.loop = true;
         musicPlayer.clip = songs[number];
+        musicPlayer.volume = 0;
         musicPlayer.Play();
+    }
+
+    public void LoopSongTwo(int number)
+    {
+        currentTrackTwo = number;
+        musicPlayerTwo.loop = true;
+        musicPlayerTwo.clip = songs[number];
+        musicPlayerTwo.Play();
     }
 
     private int Mod(int x, int m)
@@ -158,12 +169,23 @@ public class AudioManager : MonoBehaviour
         burningLoop.volume = volume;
     }
 
+    public void ChangeMusicVolume(float volume)
+    {
+        volume = Mathf.Clamp(volume, 0, 1);
+        musicPlayer.volume = volume * 0.8f;
+        musicPlayerTwo.volume = (1 - volume * 0.8f);
+    }
+
     public void StopAllSounds(Scene sc1, Scene sc2)
     {
-        foreach(var sound in tempSounds)
+        if (burningLoop != null)
+            burningLoop.volume = 0;
+        if (musicPlayer != null && musicPlayerTwo != null)
+            ChangeMusicVolume(0);
+
+        foreach (var sound in tempSounds)
         {
             Destroy(sound);
         }
-        burningLoop.volume = 0;
     }
 }
