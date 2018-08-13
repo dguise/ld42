@@ -17,7 +17,7 @@ public class Fader : MonoBehaviour
 
     private Coroutine fadeRoutine = null;
 
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
