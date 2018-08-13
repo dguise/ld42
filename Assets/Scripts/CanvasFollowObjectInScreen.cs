@@ -62,7 +62,8 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
                 wasOutside = true;
             }
             timeLeftOutsideBeforeDeath -= Time.deltaTime;
-            countdownText.text = timeLeftOutsideBeforeDeath.ToString("n2");
+            if (timeLeftOutsideBeforeDeath >= 0)
+                countdownText.text = timeLeftOutsideBeforeDeath.ToString("n2");
             if (!isPlayerDead && timeLeftOutsideBeforeDeath < 0) {
                 isPlayerDead = true;
                 GameManager.PlayerHasFailedLetsGetRidOfHimMethod();
