@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1451147560528330, guid: 05f36e79d94ac9447b89a7ce14ed90d1, type: 2}
-  offset: 1
-  flameScaleFactor: {x: 0.8, y: 0.4, z: 0.4}
+  offset: 0.39
+  flameScaleFactor: {x: 1, y: 0.55, z: 0.4}
 --- !u!212 &212726508812175650
 SpriteRenderer:
   m_ObjectHideFlags: 1
