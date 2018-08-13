@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasFollowObjectInScreen : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
     private Camera mainCam;
     private Transform frame;
     private Canvas parentCanvas;
+    public Text countdownText;
+    private float maxTimeOutside = 5.0f;
+    private float timeLeftOutsideBeforeDeath = 5.0f;
+
 
     float imageSizeOffset = 30;
 
@@ -30,13 +35,15 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
     void LateUpdate()
     {
         var screenPos = mainCam.WorldToScreenPoint(player.transform.position);
-
+        
         if (screenPos.x > 0 && 
             screenPos.x < Screen.width && 
             screenPos.y > 0 && 
             screenPos.y < Screen.height)
         {
             parentCanvas.enabled = false;
+            timeLeftOutsideBeforeDeath = maxTimeOutside;
+            countdownText.text = "";
             if (wasOutside)
             {
                 if (OnOutsideScreenToggle != null)
@@ -52,6 +59,11 @@ public class CanvasFollowObjectInScreen : MonoBehaviour
                     OnOutsideScreenToggle(true);
                 wasOutside = true;
             }
+            timeLeftOutsideBeforeDeath -= Time.deltaTime;
+            countdownText.text = timeLeftOutsideBeforeDeath.ToString("n2");
+            if (timeLeftOutsideBeforeDeath < 0)
+                GameManager.PlayerHasFailedLetsGetRidOfHimMethod();
+
 
             parentCanvas.enabled = true;
             transform.position = screenPos;
