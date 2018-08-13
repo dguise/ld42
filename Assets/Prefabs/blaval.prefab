@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212592563812949560}
   - component: {fileID: 95665954688611472}
   m_Layer: 0
-  m_Name: blaval0005
+  m_Name: blaval
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
