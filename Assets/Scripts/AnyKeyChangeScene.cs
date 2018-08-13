@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AnyKeyChangeScene : MonoBehaviour
 {
-    public int scene = 3;
+    public int scene = 2;
 
     void Start()
     {
