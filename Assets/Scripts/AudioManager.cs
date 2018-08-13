@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class AudioManager : MonoBehaviour
 
     private List<AudioClip> songs = new List<AudioClip>();
     private List<AudioClip> sounds = new List<AudioClip>();
+
+    private List<AudioSource> tempSounds = new List<AudioSource>();
 
     private int currentTrack = 0;
 
@@ -70,12 +73,19 @@ public class AudioManager : MonoBehaviour
         burningLoop.volume = 0;
         burningLoop.Play();
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.activeSceneChanged += StopAllSounds;
     }
 
     public void PlaySound(int sound)
     {
         AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        tempSounds.Add(effect);
         effect.clip = sounds[Mod(sound, sounds.Count)];
+        if (sound == 0)
+        {
+            effect.volume = 0.5f;
+        }
         effect.Play();
         Destroy(effect, effect.clip.length + 0.2f);
     }
@@ -83,6 +93,7 @@ public class AudioManager : MonoBehaviour
     public void PlayRandomize(float pitch, params int[] sound)
     {
         AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        tempSounds.Add(effect);
         int random = Random.Range(0, sound.Length);
         effect.clip = sounds[Mod(sound[Mod(random, sound.Length)], sounds.Count)];
         effect.pitch = Random.Range(1 - pitch, 1 + pitch);
@@ -109,6 +120,7 @@ public class AudioManager : MonoBehaviour
     public IEnumerator PlayChargingSound(int sound = 2)
     {
         AudioSource effect = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        tempSounds.Add(effect);
         effect.clip = sounds[Mod(sound, sounds.Count)];
         effect.loop = true;
         effect.pitch = 0.1f;
@@ -138,5 +150,14 @@ public class AudioManager : MonoBehaviour
     {
         volume = Mathf.Clamp(volume, 0, 1);
         burningLoop.volume = volume;
+    }
+
+    public void StopAllSounds(Scene sc1, Scene sc2)
+    {
+        foreach(var sound in tempSounds)
+        {
+            Destroy(sound);
+        }
+        burningLoop.volume = 0;
     }
 }
