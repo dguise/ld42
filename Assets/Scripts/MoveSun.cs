@@ -16,6 +16,13 @@ public class MoveSun : MonoBehaviour {
     private void Start()
     {
         player = GameManager.Player.transform;
+        speed = speed / 2;
+        Invoke("IncreaseSpeed", 10);
+    }
+
+    void IncreaseSpeed()
+    {
+        speed *= 2;
     }
 
     void Update () {
