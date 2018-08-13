@@ -123,6 +123,14 @@ public class SpacebarController : MonoBehaviour
             float t = turnSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z + Mathf.LerpAngle(0, -5, t));
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 1 - Time.timeScale;
+        }
 
         if (Time.time - chargeTrailTimestamp > dischargeTime) {
             ecp1.Stop();
