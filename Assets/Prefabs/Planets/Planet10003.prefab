@@ -118,8 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitation: 10
   gravitationRadius: 14.75
-  rotationSpeed: 1.4
-  ps: {fileID: 0}
+  rotationSpeed: 0
 --- !u!114 &114974806542688744
 MonoBehaviour:
   m_ObjectHideFlags: 1
