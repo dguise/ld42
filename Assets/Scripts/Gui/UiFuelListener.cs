@@ -9,7 +9,7 @@ public class UiFuelListener : MonoBehaviour
     public GameObject fuelImageObject;
     List<GameObject> fuelObjects = new List<GameObject>();
 
-    void Start()
+    void Awake()
     {
         if (GameManager.Player == null)
         {

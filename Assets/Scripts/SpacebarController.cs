@@ -77,7 +77,7 @@ public class SpacebarController : MonoBehaviour
     {
         //transform.LookAt(CrossPlatformInputManager.mousePosition); //Funkar men blir för 3d, lul
         //if mobile ?
-        if (Input.GetMouseButton(0) || Input.GetAxis("Mouse X") != 0)
+        if (SystemInfo.deviceType == DeviceType.Handheld && (Input.GetMouseButton(0)))
         {
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
