@@ -122,6 +122,7 @@ public class AudioManager : MonoBehaviour
     {
         currentTrackTwo = number;
         musicPlayerTwo.loop = true;
+        musicPlayerTwo.volume = 0.5f;
         musicPlayerTwo.clip = songs[number];
         musicPlayerTwo.Play();
     }
@@ -172,8 +173,8 @@ public class AudioManager : MonoBehaviour
     public void ChangeMusicVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0, 1);
-        musicPlayer.volume = volume * 0.8f;
-        musicPlayerTwo.volume = (1 - volume * 0.8f);
+        musicPlayer.volume = volume * 0.5f;
+        musicPlayerTwo.volume = (1 - volume * 0.5f);
     }
 
     public void StopAllSounds(Scene sc1, Scene sc2)
