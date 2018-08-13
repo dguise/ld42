@@ -170,13 +170,14 @@ public class AudioManager : MonoBehaviour
         burningLoop.volume = volume;
     }
 
+    private float volumeModifierAmount = 0.3f;
     public void ChangeMusicVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0, 1);
         Debug.Log(volume);
 
-        musicPlayer.volume = volume * 0.1f;
-        musicPlayerTwo.volume = (1 - volume * 0.1f);
+        musicPlayer.volume = volume * volumeModifierAmount;
+        musicPlayerTwo.volume = (1 * volumeModifierAmount - volume * volumeModifierAmount);
     }
 
     public void StopAllSounds(Scene sc1, Scene sc2)
