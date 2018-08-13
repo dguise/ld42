@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61078650850391212}
   m_Layer: 0
   m_Name: WinArea
-  m_TagString: Untagged
+  m_TagString: WinOnTouch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,8 +10,8 @@ namespace Assets.Scripts.Helper.Constants
         public static string Player = "Player";
         public static string Fuel = "Fuel";
         public static string SuperFuel = "SuperFuel";
-
         public static string Astroboi = "Astroboi";
+        public static string WinOnTouch = "WinOnTouch";
     }
 
     public static class Layers

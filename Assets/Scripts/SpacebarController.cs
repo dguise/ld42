@@ -176,13 +176,13 @@ public class SpacebarController : MonoBehaviour
     {
         if (collider.tag == Tags.Fuel)
         {
-            GainFuel(1);
+            GainFuel(3);
             AudioManager.instance.PlaySound(14);
             Destroy(collider.gameObject);
         }
         else if (collider.tag == Tags.SuperFuel)
         {
-            GainFuel(1);
+            GainFuel(3);
             StartCoroutine(SuperBoost());
             AudioManager.instance.PlaySound(15);
             Destroy(collider.gameObject);

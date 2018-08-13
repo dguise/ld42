@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Helper;
+using Assets.Scripts.Helper.Constants;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,10 @@ public class ScoreTracker : MonoBehaviour
     private void Start()
     {
         text = GetComponent<Text>();
+        if (GameManager.Player)
+        {
+            GameManager.Player = GameObject.FindWithTag(Tags.Player);
+        }
         if (GameManager.Player != null)
         {
             var playerController = GameManager.Player.GetComponent<SpacebarController>();
@@ -22,7 +27,7 @@ public class ScoreTracker : MonoBehaviour
 
     void OnScore()
     {
-        var newScore = GameManager.Score++;
+        var newScore = GameManager.Score + 1;
         if (newScore > GameManager.Score)
         {
             GameManager.Score = newScore;
