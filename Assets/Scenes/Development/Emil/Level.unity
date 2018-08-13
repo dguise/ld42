@@ -2307,7 +2307,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -73.8
+      value: -99.7
       objectReference: {fileID: 0}
     - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2336,6 +2336,23 @@ Prefab:
     - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5.86217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5.86217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614834245891326, guid: 82b8f990c726a7044ba171755696373e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 11.72434
+      objectReference: {fileID: 0}
+    - target: {fileID: 114065978605866336, guid: 82b8f990c726a7044ba171755696373e,
+        type: 2}
+      propertyPath: rubberBandRadius
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b8f990c726a7044ba171755696373e, type: 2}
