@@ -41,6 +41,8 @@ public class SpacebarController : MonoBehaviour
     public delegate void GainScore();
     public event GainScore OnGainScore;
 
+    private ParticleSystem psDeath;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -51,6 +53,9 @@ public class SpacebarController : MonoBehaviour
 
         ecp1 = transform.Find("EngineChargeParticles1").GetComponent<ParticleSystem>();
         ecp2 = transform.Find("EngineChargeParticles2").GetComponent<ParticleSystem>();
+
+        psDeath = GetComponent<ParticleSystem>();
+        psDeath.Stop();
 
         GainFuel(startingFuel);
     }
@@ -194,6 +199,11 @@ public class SpacebarController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         AudioManager.instance.PlayRandomize(0, 10, 11, 12);
+
+        if (collision.gameObject.tag == "Planet") {
+            psDeath.Play();
+            enabled = false;
+        }
     }
 
     private IEnumerator SuperBoost()
