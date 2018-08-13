@@ -174,7 +174,6 @@ public class AudioManager : MonoBehaviour
     public void ChangeMusicVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0, 1);
-        Debug.Log(volume);
 
         musicPlayer.volume = volume * volumeModifierAmount;
         musicPlayerTwo.volume = (1 * volumeModifierAmount - volume * volumeModifierAmount);
