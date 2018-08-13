@@ -7,8 +7,8 @@ public class MoveSun : MonoBehaviour {
 
     Transform player;
 
-    float speed = 3;
-    float rubberBandRadius = 54;
+    public float speed = 3;
+    public float rubberBandRadius = 54;
 
     private float startSoundDistance = 20;
 
